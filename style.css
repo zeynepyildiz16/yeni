@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+
+:root {
+  --black: #1c2a39;
+  --gray: #11003ac4;
+  --purple: #4c3db2;
+  --transition: var(--transition);
+}
+
+
+.navbar {
+  height: 120px;
+  width: 80%;
+  margin-left: 10%;
+
+}
+
+
+.title {
+  font-weight: bold;
+}
+
+
+.menu,
+.menu_ikonlari {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+
+.menu .aktif {
+  color: var(--black);
+  font-weight: bold;
+}
+
+
+.menu li,
+.menu_ikonlari li {
+  margin: 0 10px;
+}
+
+
+.menu_ikonlari li {
+  color: var(--black);
+}
+
+
+.sepet_ikon {
+  position: relative;
+}
+
+
+.sepetteki_urun {
+  position: absolute;
+  right: -0.7rem;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--black);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+.slider {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+}
+
+
+.slider img {
+  height: 400px;
+}
+
+
+.imgyazilari {
+  color: var(--black);
+  position: absolute;
+  left: 40%;
+  bottom: 20px;
+
+}
+
+
+.imgyazilari2 {
+  color: var(--black);
+  position: absolute;
+  left: 480px;
+  bottom: 150px;
+
+}
+
+
+.imgyazilari3 {
+  color: whitesmoke;
+  position: absolute;
+  left: 80px;
+  bottom: 5px;
+
+}
+
+
+.store {
+  width: 80%;
+  margin-left: 10%;
+  /* background-color: #a7b1c2; */
+}
+
+
+.kitap_karti {
+  height: 400px;
+}
+
+
+.fos {
+  font-family: "Open Sans", sans-serif;
+}
+
+.gray {
+  color: var(--gray);
+}
+
+.black {
+  color: var(--black);
+}
+
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.yildizlar .bi-star,
+.bi-star-fill {
+  color: #414142;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.yildizlar .bi-star-fill.active {
+  color: #f2c94c;
+}
+
+
+.kitap-bilgi {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  /* burda kaç satır gösterileceği belirtildi 4 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* ELipsis sonuna nokta nokta yapmamızı sağladı */
+  margin-top: 10px;
+}
+
+.old_price {
+  text-decoration: line-through;
+  color: #bdbdbd;
+}
+
+
+.mor_buton {
+  cursor: pointer;
+  border: 2px solid #dc3545;
+  color: #fffcfc;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #e4002b;
+  transition: var(--transition);
+  margin-top: 8px;
+}
+
+.mor_buton:hover {
+  background-color: #fffcfc;
+  color: #e4002b;
+}
+
+
+.kitap_karti {
+  height: 400px;
+
+}
+
+.filter__background {
+  position: absolute;
+  left: 0;
+  height: 800px;
+  width: 450px;
+  background-color: #efeef6;
+  /* margin-top: 448px; */
+  z-index: -1;
+
+}
+
+
+.filter {
+  list-style-type: none;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  min-height: 650px;
+  justify-content: center;
+}
+
+.filter li {
+  color: black;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+
+}
+
+.filter li:hover {
+  color: #bd0b2c;
+}
+
+
+.filter li.active {
+  color: #e4002b;
+  font-size: 1.rem;
+  font-weight: bold;
+}
+
+
+
+.filter li.active:hover {
+  color: black;
+}
+
+.filter li.active::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #4c5152;
+  position: absolute;
+  left: -5px;
+  margin-top: 6px;
+}
+
+
+.sepet {
+  opacity: 0;
+  position: fixed;
+  left: 70;
+  top: 0;
+  background-color: #5c6a7950;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: var(--transition);
+}
+
+.sepet.active {
+  opacity: 1;
+  z-index: 999;
+}
+
+
+.sepet_itemleri {
+
+  position: relative;
+  width: 310px;
+  background-color: white;
+  height: 100%;
+  float: right;
+  transition: var(--transition);
+}
+
+.sepet_modal.active .sepet_items {
+  width: 450px;
+}
+
+.sepet_itemleri .bi-x {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 3rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.sepet_baslik {
+  color: #1c2a39;
+  margin-top: 5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sepet_liste {
+  list-style-type: none;
+  padding: 10px;
+  margin-top: 3rem;
+  max-height: 650px;
+  overflow-y: auto;
+}
+
+.sepet_liste li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.sepet_urun_bilgisi .kitap_adi {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.sepet_urun_bilgisi .kitap_fiyat {
+  font-size: 16px;
+}
+
+.sepet_urun_bilgisi .kitap_eksiltmek {
+  cursor: pointer;
+  color: var(--gray);
+}
+
+.sepet_bilgi .kitap_adet {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--black);
+}
+
+
+
+.kitap_adet .azaltmak {
+  margin-left: 5px;
+}
+
+
+.kitap_adet .arttirmak {
+  margin-right: 5px;
+}
+
+
+
+.kitap_adet .azaltmak,
+.arttirmak {
+  cursor: pointer;
+  color: var(--purple);
+}
+
+.sepet_toplami {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 5%;
+  align-items: center;
+  width: inherit;
+}
+
+.sepet_toplami button {
+  width: 250px;
+}
